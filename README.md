@@ -8,7 +8,7 @@ Agent skills for AI-powered web development and consultancy workflows.
 
 | Skill | Description |
 |-------|-------------|
-| **website-refactor** | End-to-end website refactoring using agent teams. Composes content-extraction, web-audit, and seo-migration as specialized teammates |
+| **website-refactor** | End-to-end website refactoring using agent teams. Composes website-analysis, web-audit, and seo-migration as specialized teammates |
 
 ```bash
 npx skills add saccoai/agent-skills@website-refactor
@@ -18,14 +18,12 @@ npx skills add saccoai/agent-skills@website-refactor
 
 | Skill | Description |
 |-------|-------------|
-| **website-structure** | Recursively traverse all links on a site to map every page, gallery, sub-page, and asset. Run first to ensure nothing is missed |
-| **content-extraction** | Crawl any website and extract all content into structured data files |
+| **website-analysis** | Single-pass crawl that produces both the structural map and full content extraction. Discovers pages, navigation, multilingual variants, and issues while extracting all text, images, and assets. Replaces the old website-structure + content-extraction combo |
 | **web-audit** | Lighthouse, accessibility, cross-browser, performance budgets, mobile responsiveness |
 | **seo-migration** | Redirect mapping, canonical URLs, sitemap, structured data, meta tags |
 
 ```bash
-npx skills add saccoai/agent-skills@website-structure
-npx skills add saccoai/agent-skills@content-extraction
+npx skills add saccoai/agent-skills@website-analysis
 npx skills add saccoai/agent-skills@web-audit
 npx skills add saccoai/agent-skills@seo-migration
 ```
@@ -66,14 +64,13 @@ npx skills add saccoai/agent-skills@nextjs-fullstack
 
 ```
 website-refactor (orchestrator — agent team)
-├── website-structure   →  first scan (Phase 0: map all pages before extracting)
-├── content-extraction  →  content-extractor teammate
-├── web-audit           →  qa-auditor teammate
-├── seo-migration       →  seo-manager teammate
-├── frontend-design     →  designer teammate (aesthetic direction + standards)
-├── nextjs-fullstack    →  architecture reference for all teammates
-├── client-proposal     →  pre-engagement (sales/scoping)
-└── project-handoff     →  post-delivery (final deliverable)
+├── website-analysis   →  single-pass crawl: structure + content (Phase 1)
+├── web-audit          →  qa-auditor teammate
+├── seo-migration      →  seo-manager teammate
+├── frontend-design    →  designer teammate (aesthetic direction + standards)
+├── nextjs-fullstack   →  architecture reference for all teammates
+├── client-proposal    →  pre-engagement (sales/scoping)
+└── project-handoff    →  post-delivery (final deliverable)
 
 ```
 
