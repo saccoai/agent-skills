@@ -1,6 +1,7 @@
 ---
 name: website-analysis
 description: Crawl any website in a single pass to produce both a complete structural map and full content extraction. Discovers all pages, routes, navigation, multilingual variants, and issues while simultaneously extracting all text, images, metadata, and assets. Use before any migration, redesign, or audit.
+allowed-tools: Bash(npx agent-browser:*), Bash(agent-browser:*)
 ---
 
 This skill crawls an entire website **once** and produces both the structural map and the full content extraction in a single pass. Every page visit yields structure (links, nav, redirects, issues) AND content (text, images, metadata, assets).
